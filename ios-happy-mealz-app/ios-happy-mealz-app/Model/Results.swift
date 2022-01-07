@@ -12,7 +12,7 @@ struct Results: Decodable {
 }
 
 struct Category: Decodable, Encodable {
-    let strCategory: String?
+    let strCategory: String
 }
 
 struct MealData: Decodable, Encodable {
