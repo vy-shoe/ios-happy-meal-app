@@ -20,23 +20,18 @@ class CategoryViewController: UIViewController {
         requestManager.fetchCategories()
         
     }
+    
+    
+
+    
+    
 }
 
 
 //MARK: - RequestManagerDelegate
 extension CategoryViewController: RequestManagerDelegate {
-    func didGetRequest(_ requestManager: RequestManager, resultData: Data) {
-        DispatchQueue.main.async {
-            if let dataString = String(data: resultData, encoding: .utf8) {
-                print(dataString)
-            }
-            
-//            let decoder = JSONDecoder()
-//            let decodedData = decoder.decode(resultData, from: )
-//            print(decodedData)
-            // when you oarse through JSON and make table
-            //
-        }
+    func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
+//        resultData
     }
     
     func didFailWithError(error: Error) {

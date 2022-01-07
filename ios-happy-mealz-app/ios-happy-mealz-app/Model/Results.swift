@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct MealData: Decodable {
+struct Results: Decodable {
+    let categories: [Category]
+}
+
+struct Category: Decodable, Encodable {
+    let strCategory: String?
+}
+
+struct MealData: Decodable, Encodable {
     let idMeal: String?
     let strMeal: String?
     let strInstructions: String?
