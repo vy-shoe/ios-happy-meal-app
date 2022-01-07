@@ -8,53 +8,55 @@
 import Foundation
 
 
+protocol RequestManagerDelegate {
+    func didGetRequest(_ requestManager: RequestManager, resultData: Data)
+    func didFailWithError(error: Error)
+}
+
 
 struct RequestManager {
     let categoryURL     = "https://www.themealdb.com/api/json/v1/1/categories.php"
     let mealsURL        = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
     let idURL           = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
+    var delegate: RequestManagerDelegate?
+    var requestType = ""
     
-    func fetchCategories() {
+    mutating func fetchCategories() {
+        requestType = "category"
         performRequest(urlString: categoryURL)
+        
     }
     
-    func fetchMealsByCategory(category: String) {
+    mutating func fetchMealsByCategory(category: String) {
+        requestType = "meals"
         let url = mealsURL+"\(category)"
         performRequest(urlString: url)
     }
     
-    func fetchMeal(mealID: String) {
-        performRequest(urlString: categoryURL)
+    mutating func fetchMeal(mealID: String) {
+        requestType = "mealID"
+        let url = idURL+"\(mealID)"
+        performRequest(urlString: url)
     }
     
     func performRequest(urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler:  handle(data: response: error: ))
-//            let task = session.dataTask(with: url) { (data, response, error) in
-//                if error != nil {
-//                    print(error!)
-//                    return //exit out of ifunction, dont continue bc it failed
-//                }
-//                if let safeData = data {
-//                    print(safeData)
-//                    if let category = self.parseJSON(urlData: safeData, requestType: requestType) {
-//                        print(category)
-////                    }
-//                }
             task.resume()
-            }
         }
     }
-
+        
 func handle(data: Data?, response: URLResponse?, error: Error?) {
         if error != nil {
-            print(error!)
+            delegate?.didFailWithError(error: error!)
             return //exit out of function, dont continue bc it failed
         }
         if let safeData = data {
             //convert data into string
-            let dataString = String(data: safeData, encoding: .utf8)
-            print(dataString ?? "No data found")
+//            let dataString = String(data: safeData, encoding: .utf8)
+            self.delegate?.didGetRequest(self, resultData: safeData)
         }
     }
+    
+}

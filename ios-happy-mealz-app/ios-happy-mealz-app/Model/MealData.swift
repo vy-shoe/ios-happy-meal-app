@@ -13,8 +13,5 @@ struct MealData: Decodable {
     let strInstructions: String?
     let strIngredient: [Array<String>]?
     let strMeasure: [Array<String>]?
-    let strCategory: String?
     let strMealThumb: String?
-    
-    
 }
