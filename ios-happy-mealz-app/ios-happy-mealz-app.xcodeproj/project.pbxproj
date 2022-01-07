@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74F67F3E2787D99B00720008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3D2787D99B00720008 /* AppDelegate.swift */; };
+		74F67F402787D99B00720008 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3F2787D99B00720008 /* SceneDelegate.swift */; };
+		74F67F422787D99B00720008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F412787D99B00720008 /* ViewController.swift */; };
+		74F67F452787D99B00720008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F432787D99B00720008 /* Main.storyboard */; };
+		74F67F472787D99B00720008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F462787D99B00720008 /* Assets.xcassets */; };
+		74F67F4A2787D99B00720008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F482787D99B00720008 /* LaunchScreen.storyboard */; };
+		74F67F552787D99B00720008 /* ios_happy_mealz_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F542787D99B00720008 /* ios_happy_mealz_appTests.swift */; };
+		74F67F5F2787D99C00720008 /* ios_happy_mealz_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F5E2787D99C00720008 /* ios_happy_mealz_appUITests.swift */; };
+		74F67F612787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F602787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74F67F512787D99B00720008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74F67F322787D99B00720008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74F67F392787D99B00720008;
+			remoteInfo = "ios-happy-mealz-app";
+		};
+		74F67F5B2787D99B00720008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74F67F322787D99B00720008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74F67F392787D99B00720008;
+			remoteInfo = "ios-happy-mealz-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		74F67F3A2787D99B00720008 /* ios-happy-mealz-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-happy-mealz-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F67F3D2787D99B00720008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74F67F3F2787D99B00720008 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		74F67F412787D99B00720008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74F67F442787D99B00720008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74F67F462787D99B00720008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74F67F492787D99B00720008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74F67F4B2787D99B00720008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74F67F502787D99B00720008 /* ios-happy-mealz-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-happy-mealz-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F67F542787D99B00720008 /* ios_happy_mealz_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_happy_mealz_appTests.swift; sourceTree = "<group>"; };
+		74F67F5A2787D99B00720008 /* ios-happy-mealz-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-happy-mealz-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F67F5E2787D99C00720008 /* ios_happy_mealz_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_happy_mealz_appUITests.swift; sourceTree = "<group>"; };
+		74F67F602787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_happy_mealz_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74F67F372787D99B00720008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F4D2787D99B00720008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F572787D99B00720008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74F67F312787D99B00720008 = {
+			isa = PBXGroup;
+			children = (
+				74F67F3C2787D99B00720008 /* ios-happy-mealz-app */,
+				74F67F532787D99B00720008 /* ios-happy-mealz-appTests */,
+				74F67F5D2787D99B00720008 /* ios-happy-mealz-appUITests */,
+				74F67F3B2787D99B00720008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74F67F3B2787D99B00720008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F3A2787D99B00720008 /* ios-happy-mealz-app.app */,
+				74F67F502787D99B00720008 /* ios-happy-mealz-appTests.xctest */,
+				74F67F5A2787D99B00720008 /* ios-happy-mealz-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74F67F3C2787D99B00720008 /* ios-happy-mealz-app */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F3D2787D99B00720008 /* AppDelegate.swift */,
+				74F67F3F2787D99B00720008 /* SceneDelegate.swift */,
+				74F67F6F2787D9BA00720008 /* Model */,
+				74F67F6D2787D9A600720008 /* Controller */,
+				74F67F6E2787D9AC00720008 /* View */,
+				74F67F482787D99B00720008 /* LaunchScreen.storyboard */,
+				74F67F4B2787D99B00720008 /* Info.plist */,
+			);
+			path = "ios-happy-mealz-app";
+			sourceTree = "<group>";
+		};
+		74F67F532787D99B00720008 /* ios-happy-mealz-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F542787D99B00720008 /* ios_happy_mealz_appTests.swift */,
+			);
+			path = "ios-happy-mealz-appTests";
+			sourceTree = "<group>";
+		};
+		74F67F5D2787D99B00720008 /* ios-happy-mealz-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F5E2787D99C00720008 /* ios_happy_mealz_appUITests.swift */,
+				74F67F602787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift */,
+				74F67F462787D99B00720008 /* Assets.xcassets */,
+			);
+			path = "ios-happy-mealz-appUITests";
+			sourceTree = "<group>";
+		};
+		74F67F6D2787D9A600720008 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F412787D99B00720008 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F67F6E2787D9AC00720008 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74F67F432787D99B00720008 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74F67F6F2787D9BA00720008 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74F67F392787D99B00720008 /* ios-happy-mealz-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74F67F642787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-app" */;
+			buildPhases = (
+				74F67F362787D99B00720008 /* Sources */,
+				74F67F372787D99B00720008 /* Frameworks */,
+				74F67F382787D99B00720008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-happy-mealz-app";
+			productName = "ios-happy-mealz-app";
+			productReference = 74F67F3A2787D99B00720008 /* ios-happy-mealz-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74F67F4F2787D99B00720008 /* ios-happy-mealz-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74F67F672787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-appTests" */;
+			buildPhases = (
+				74F67F4C2787D99B00720008 /* Sources */,
+				74F67F4D2787D99B00720008 /* Frameworks */,
+				74F67F4E2787D99B00720008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74F67F522787D99B00720008 /* PBXTargetDependency */,
+			);
+			name = "ios-happy-mealz-appTests";
+			productName = "ios-happy-mealz-appTests";
+			productReference = 74F67F502787D99B00720008 /* ios-happy-mealz-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		74F67F592787D99B00720008 /* ios-happy-mealz-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74F67F6A2787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-appUITests" */;
+			buildPhases = (
+				74F67F562787D99B00720008 /* Sources */,
+				74F67F572787D99B00720008 /* Frameworks */,
+				74F67F582787D99B00720008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74F67F5C2787D99B00720008 /* PBXTargetDependency */,
+			);
+			name = "ios-happy-mealz-appUITests";
+			productName = "ios-happy-mealz-appUITests";
+			productReference = 74F67F5A2787D99B00720008 /* ios-happy-mealz-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74F67F322787D99B00720008 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					74F67F392787D99B00720008 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					74F67F4F2787D99B00720008 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 74F67F392787D99B00720008;
+					};
+					74F67F592787D99B00720008 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 74F67F392787D99B00720008;
+					};
+				};
+			};
+			buildConfigurationList = 74F67F352787D99B00720008 /* Build configuration list for PBXProject "ios-happy-mealz-app" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74F67F312787D99B00720008;
+			productRefGroup = 74F67F3B2787D99B00720008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74F67F392787D99B00720008 /* ios-happy-mealz-app */,
+				74F67F4F2787D99B00720008 /* ios-happy-mealz-appTests */,
+				74F67F592787D99B00720008 /* ios-happy-mealz-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74F67F382787D99B00720008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F67F4A2787D99B00720008 /* LaunchScreen.storyboard in Resources */,
+				74F67F472787D99B00720008 /* Assets.xcassets in Resources */,
+				74F67F452787D99B00720008 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F4E2787D99B00720008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F582787D99B00720008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74F67F362787D99B00720008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F67F422787D99B00720008 /* ViewController.swift in Sources */,
+				74F67F3E2787D99B00720008 /* AppDelegate.swift in Sources */,
+				74F67F402787D99B00720008 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F4C2787D99B00720008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F67F552787D99B00720008 /* ios_happy_mealz_appTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F67F562787D99B00720008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F67F5F2787D99C00720008 /* ios_happy_mealz_appUITests.swift in Sources */,
+				74F67F612787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74F67F522787D99B00720008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74F67F392787D99B00720008 /* ios-happy-mealz-app */;
+			targetProxy = 74F67F512787D99B00720008 /* PBXContainerItemProxy */;
+		};
+		74F67F5C2787D99B00720008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74F67F392787D99B00720008 /* ios-happy-mealz-app */;
+			targetProxy = 74F67F5B2787D99B00720008 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74F67F432787D99B00720008 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74F67F442787D99B00720008 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74F67F482787D99B00720008 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74F67F492787D99B00720008 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74F67F622787D99C00720008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74F67F632787D99C00720008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74F67F652787D99C00720008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-happy-mealz-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74F67F662787D99C00720008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-happy-mealz-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		74F67F682787D99C00720008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-happy-mealz-app.app/ios-happy-mealz-app";
+			};
+			name = Debug;
+		};
+		74F67F692787D99C00720008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-happy-mealz-app.app/ios-happy-mealz-app";
+			};
+			name = Release;
+		};
+		74F67F6B2787D99C00720008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-happy-mealz-app";
+			};
+			name = Debug;
+		};
+		74F67F6C2787D99C00720008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XR495W2MZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vaishu.ios-happy-mealz-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-happy-mealz-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74F67F352787D99B00720008 /* Build configuration list for PBXProject "ios-happy-mealz-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F67F622787D99C00720008 /* Debug */,
+				74F67F632787D99C00720008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74F67F642787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F67F652787D99C00720008 /* Debug */,
+				74F67F662787D99C00720008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74F67F672787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F67F682787D99C00720008 /* Debug */,
+				74F67F692787D99C00720008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74F67F6A2787D99C00720008 /* Build configuration list for PBXNativeTarget "ios-happy-mealz-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F67F6B2787D99C00720008 /* Debug */,
+				74F67F6C2787D99C00720008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74F67F322787D99B00720008 /* Project object */;
+}
