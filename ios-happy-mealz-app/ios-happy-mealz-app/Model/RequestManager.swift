@@ -50,14 +50,17 @@ class RequestManager {
                     if let safeData = data {
                         do {
                             let decodedData = try decoder.decode(Results.self, from: safeData)
+                            for c in decodedData.categories {
+                                let newCategoryName = c.strCategory
+                                let newCategory = Category(strCategory: newCategoryName)
+                                self.categoryList.append(newCategory)
+                            }
+                            self.categoryList = self.categoryList.sorted(by: { (c1, c2) -> Bool in
+                                let c1_Name = c1.strCategory
+                                let c2_Name = c2.strCategory
+                                return (c1_Name.localizedCaseInsensitiveCompare(c2_Name) == .orderedAscending)
+                             })
                             DispatchQueue.main.async {
-                                for c in decodedData.categories {
-                                    if let newCategoryName = c.strCategory {
-                                        let newCategory = Category(strCategory: newCategoryName)
-                                        self.categoryList.append(newCategory)
-                                    }
-                                    
-                                }
                                 self.delegate?.didGetRequest(self, resultData: self.categoryList)
                             }
                             

@@ -8,10 +8,17 @@
 import Foundation
 import UIKit
 
+protocol CategoryCellDelegate {
+    func callSegueFromCell(myData: String)
+}
+
 class CategoryViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    var categoryChosen = ""
+    
     var requestManager = RequestManager()
-    var categories: [Array<String>]?
+    var categories: [Category] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +27,49 @@ class CategoryViewController: UIViewController {
         requestManager.fetchCategories()
         
     }
-    
-    
 
-    
-    
 }
 
 
 //MARK: - RequestManagerDelegate
 extension CategoryViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
-//        resultData
+        categories = resultData as! [Category]
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CategoryViewCell", bundle: nil), forCellReuseIdentifier: "CategoryReusableCell")
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
+}
+
+// MARK: -TableView
+extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = categories.count
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let categoryName = categories[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryReusableCell", for: indexPath) as! CategoryViewCell
+        cell.label.setTitle("\(categoryName.strCategory)", for: .normal)
+        cell.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectCell cell: CategoryViewCell, onIndexPath indexPath: IndexPath) {
+        print("hello")
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    //MARK: - MyCustomCellDelegator Methods
+
+     func callSegueFromCell(myData : String) {
+         self.performSegue(withIdentifier: "categorySelectedSegue", sender: myData)
+//         let destinationVC = MealViewController()
+//         destinationVC.categoryChosen = myData
+     }
 }
