@@ -5,7 +5,6 @@
 //  Created by Vaishu Adi on 1/6/22.
 //
 
-import Foundation
 import UIKit
 
 protocol CategoryCellDelegate {
@@ -69,7 +68,5 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
 
      func callSegueFromCell(myData : String) {
          self.performSegue(withIdentifier: "categorySelectedSegue", sender: myData)
-//         let destinationVC = MealViewController()
-//         destinationVC.categoryChosen = myData
      }
 }
