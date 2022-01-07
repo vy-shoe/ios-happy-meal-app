@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+class CategoryViewController: UIViewController {
+    
+    var requestManager = RequestManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        requestManager.fetchCategories()
+        
+    }
+}

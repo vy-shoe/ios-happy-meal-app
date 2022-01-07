@@ -8,12 +8,13 @@
 import Foundation
 
 struct MealData: Decodable {
-    let idMeal: String
-    let strMeal: String
-    let strInstructions: String
-    let strIngredient: [Array<String>]
-    let strMeasure: [Array<String>]
-    let strCategory: String
+    let idMeal: String?
+    let strMeal: String?
+    let strInstructions: String?
+    let strIngredient: [Array<String>]?
+    let strMeasure: [Array<String>]?
+    let strCategory: String?
+    let strMealThumb: String?
     
     
 }
