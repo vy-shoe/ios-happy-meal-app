@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		74F67F3E2787D99B00720008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3D2787D99B00720008 /* AppDelegate.swift */; };
 		74F67F402787D99B00720008 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3F2787D99B00720008 /* SceneDelegate.swift */; };
-		74F67F422787D99B00720008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F412787D99B00720008 /* ViewController.swift */; };
+		74F67F422787D99B00720008 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F412787D99B00720008 /* WelcomeViewController.swift */; };
 		74F67F452787D99B00720008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F432787D99B00720008 /* Main.storyboard */; };
 		74F67F472787D99B00720008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F462787D99B00720008 /* Assets.xcassets */; };
 		74F67F4A2787D99B00720008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F67F482787D99B00720008 /* LaunchScreen.storyboard */; };
 		74F67F552787D99B00720008 /* ios_happy_mealz_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F542787D99B00720008 /* ios_happy_mealz_appTests.swift */; };
 		74F67F5F2787D99C00720008 /* ios_happy_mealz_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F5E2787D99C00720008 /* ios_happy_mealz_appUITests.swift */; };
 		74F67F612787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F602787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift */; };
+		74F67F712787DC6700720008 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F702787DC6700720008 /* CategoryViewController.swift */; };
+		74F67F742787DC7900720008 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F732787DC7900720008 /* MealViewController.swift */; };
+		74F67F762787DC8700720008 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F752787DC8700720008 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		74F67F3A2787D99B00720008 /* ios-happy-mealz-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-happy-mealz-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F67F3D2787D99B00720008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F67F3F2787D99B00720008 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74F67F412787D99B00720008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74F67F412787D99B00720008 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		74F67F442787D99B00720008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74F67F462787D99B00720008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74F67F492787D99B00720008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		74F67F5A2787D99B00720008 /* ios-happy-mealz-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-happy-mealz-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F67F5E2787D99C00720008 /* ios_happy_mealz_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_happy_mealz_appUITests.swift; sourceTree = "<group>"; };
 		74F67F602787D99C00720008 /* ios_happy_mealz_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_happy_mealz_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74F67F702787DC6700720008 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		74F67F732787DC7900720008 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		74F67F752787DC8700720008 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +137,10 @@
 		74F67F6D2787D9A600720008 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				74F67F412787D99B00720008 /* ViewController.swift */,
+				74F67F412787D99B00720008 /* WelcomeViewController.swift */,
+				74F67F702787DC6700720008 /* CategoryViewController.swift */,
+				74F67F732787DC7900720008 /* MealViewController.swift */,
+				74F67F752787DC8700720008 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,7 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74F67F422787D99B00720008 /* ViewController.swift in Sources */,
+				74F67F712787DC6700720008 /* CategoryViewController.swift in Sources */,
+				74F67F742787DC7900720008 /* MealViewController.swift in Sources */,
+				74F67F422787D99B00720008 /* WelcomeViewController.swift in Sources */,
+				74F67F762787DC8700720008 /* DetailViewController.swift in Sources */,
 				74F67F3E2787D99B00720008 /* AppDelegate.swift in Sources */,
 				74F67F402787D99B00720008 /* SceneDelegate.swift in Sources */,
 			);
