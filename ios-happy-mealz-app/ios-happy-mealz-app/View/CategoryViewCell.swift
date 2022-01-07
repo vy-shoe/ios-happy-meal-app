@@ -25,7 +25,6 @@ class CategoryViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func buttonPressed(_ sender: Any) {
-        print(label.currentTitle!)
         if (self.delegate != nil){ //Just to be safe.
             self.delegate.callSegueFromCell(myData: label.currentTitle ?? "No Category Selected")
         }

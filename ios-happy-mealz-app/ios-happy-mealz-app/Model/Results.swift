@@ -8,8 +8,9 @@
 import Foundation
 
 struct Results: Decodable {
-    let categories: [Category]
-    let meals: [Meal]?
+    var categories: [Category]?
+    var meals: [Meal]?
+    var recipes: [Recipe]?
 }
 
 struct Category: Decodable, Encodable {
@@ -17,6 +18,11 @@ struct Category: Decodable, Encodable {
 }
 
 struct Meal: Decodable, Encodable {
+    let idMeal: String
+    let strMeal: String
+}
+
+struct Recipe: Decodable, Encodable {
     let idMeal: String
     let strMeal: String
     let strInstructions: String

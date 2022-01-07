@@ -11,16 +11,22 @@ class MealViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationItem!
     
-    var categoryChosen: String = ""
+    var categoryChosen: String = "Default"
     var requestManager = RequestManager()
     var meals: [Meal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(categoryChosen)
         requestManager.delegate = self
+        callRequest()
+        
+    }
+    
+    func callRequest()  {
+        print(categoryChosen)
         requestManager.fetchMealsByCategory(category: categoryChosen)
+        
     }
     
     

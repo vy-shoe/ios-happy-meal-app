@@ -67,6 +67,14 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     //MARK: - MyCustomCellDelegator Methods
 
      func callSegueFromCell(myData : String) {
-         self.performSegue(withIdentifier: "categorySelectedSegue", sender: myData)
+         categoryChosen = myData
+         self.performSegue(withIdentifier: "categorySelectedSegue", sender: self)
+         
      }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! MealViewController
+        destinationVC.categoryChosen = categoryChosen
+    }
 }
