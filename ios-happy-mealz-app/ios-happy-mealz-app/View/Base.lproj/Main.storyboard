@@ -95,6 +95,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="d1v-9o-My1"/>
                     <connections>
                         <outlet property="tableView" destination="bnP-lc-tpz" id="gNs-mA-auy"/>
+                        <segue destination="Cmo-qz-kqB" kind="show" identifier="categorySelectedSegue" id="VDD-0A-wn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7K-Tr-CtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,7 +105,7 @@
         <!--Meal View Controller-->
         <scene sceneID="0tp-mH-q1f">
             <objects>
-                <viewController id="Cmo-qz-kqB" customClass="MealViewController" sceneMemberID="viewController">
+                <viewController id="Cmo-qz-kqB" customClass="MealViewController" customModule="ios_happy_mealz_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8X-NW-6Mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="Pxe-i7-ODZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1wM-o6-hPq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjT-yT-cSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

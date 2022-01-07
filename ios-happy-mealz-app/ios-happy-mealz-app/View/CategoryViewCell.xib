@@ -16,23 +16,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucS-hc-YaM">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKw-wL-aMX">
                         <rect key="frame" x="10" y="5" width="305" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Label" titleAlignment="automatic"/>
+                        <connections>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xw1-Gm-bbn"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ucS-hc-YaM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6Xa-k0-sOV"/>
-                    <constraint firstAttribute="bottom" secondItem="ucS-hc-YaM" secondAttribute="bottom" constant="5" id="8rS-AZ-fxU"/>
-                    <constraint firstItem="ucS-hc-YaM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Gng-Qs-cWK"/>
-                    <constraint firstAttribute="trailing" secondItem="ucS-hc-YaM" secondAttribute="trailing" constant="5" id="JJQ-hv-2Yb"/>
+                    <constraint firstItem="WKw-wL-aMX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="G7M-Si-SKo"/>
+                    <constraint firstItem="WKw-wL-aMX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GVl-dY-oOf"/>
+                    <constraint firstAttribute="trailing" secondItem="WKw-wL-aMX" secondAttribute="trailing" constant="5" id="rId-nk-Fvv"/>
+                    <constraint firstAttribute="bottom" secondItem="WKw-wL-aMX" secondAttribute="bottom" constant="5" id="vef-gg-PwG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="label" destination="ucS-hc-YaM" id="xs2-Kd-wtN"/>
+                <outlet property="label" destination="WKw-wL-aMX" id="hNe-hD-QQe"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="67.633928571428569"/>
         </tableViewCell>

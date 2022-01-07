@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
+protocol CategoryCellDelegate {
+    func callSegueFromCell(myData: String)
+}
+
 class CategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var categoryChosen = ""
     
     var requestManager = RequestManager()
     var categories: [Category] = []
@@ -22,10 +27,7 @@ class CategoryViewController: UIViewController {
         requestManager.fetchCategories()
         
     }
-    
-//    func loadCategories() {
-//        
-//    }
+
 }
 
 
@@ -42,8 +44,8 @@ extension CategoryViewController: RequestManagerDelegate {
     }
 }
 
-
-extension CategoryViewController: UITableViewDataSource {
+// MARK: -TableView
+extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = categories.count
@@ -53,7 +55,21 @@ extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let categoryName = categories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryReusableCell", for: indexPath) as! CategoryViewCell
-        cell.label.text = categoryName.strCategory
+        cell.label.setTitle("\(categoryName.strCategory)", for: .normal)
+        cell.delegate = self
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectCell cell: CategoryViewCell, onIndexPath indexPath: IndexPath) {
+        print("hello")
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    //MARK: - MyCustomCellDelegator Methods
+
+     func callSegueFromCell(myData : String) {
+         self.performSegue(withIdentifier: "categorySelectedSegue", sender: myData)
+//         let destinationVC = MealViewController()
+//         destinationVC.categoryChosen = myData
+     }
 }
