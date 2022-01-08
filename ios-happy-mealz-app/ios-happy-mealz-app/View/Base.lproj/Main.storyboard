@@ -137,8 +137,36 @@
                     <view key="view" contentMode="scaleToFill" id="j5L-Au-llk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cRq-Kp-x5O">
+                                <rect key="frame" x="0.0" y="410" width="414" height="383"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-Mf-571">
+                                <rect key="frame" x="20" y="188" width="374" height="203"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-9H-5vl">
+                                <rect key="frame" x="20" y="123" width="374" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xLf-CL-CjN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xLf-CL-CjN" firstAttribute="trailing" secondItem="nlk-9H-5vl" secondAttribute="trailing" constant="20" id="C2G-VS-ZEx"/>
+                            <constraint firstItem="Yz7-Mf-571" firstAttribute="leading" secondItem="xLf-CL-CjN" secondAttribute="leading" constant="20" id="Dsl-vm-XEe"/>
+                            <constraint firstItem="xLf-CL-CjN" firstAttribute="trailing" secondItem="Yz7-Mf-571" secondAttribute="trailing" constant="20" id="Fj1-wo-S1D"/>
+                            <constraint firstItem="nlk-9H-5vl" firstAttribute="top" secondItem="xLf-CL-CjN" secondAttribute="top" constant="35" id="cn2-la-F3p"/>
+                            <constraint firstItem="Yz7-Mf-571" firstAttribute="top" secondItem="nlk-9H-5vl" secondAttribute="bottom" constant="35" id="dz5-Jk-jFq"/>
+                            <constraint firstItem="cRq-Kp-x5O" firstAttribute="top" secondItem="Yz7-Mf-571" secondAttribute="bottom" constant="20" id="oaU-IU-Znz"/>
+                            <constraint firstItem="nlk-9H-5vl" firstAttribute="leading" secondItem="xLf-CL-CjN" secondAttribute="leading" constant="20" id="y0W-sF-xE9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5RA-iL-2NA"/>
                 </viewController>
