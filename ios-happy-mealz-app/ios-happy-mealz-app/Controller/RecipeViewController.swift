@@ -36,14 +36,35 @@ extension RecipeViewController: RequestManagerDelegate {
             print("Recipe fetched call: \(String(describing: recipe))")
             recipeName.text = recipe.strMeal
             instructions.text = recipe.strInstructions
+            tableView.dataSource = self
+            tableView.register(UINib(nibName: "RecipeViewCell", bundle: nil), forCellReuseIdentifier: "RecipeReusableCell")
+            print("hello1")
         }
         
-        
-//        tableView.dataSource = self
-//        tableView.register(UINib(nibName: "RecipeViewCell", bundle: nil), forCellReuseIdentifier: "RecipeReusableCell")
     }
     
     func didFailWithError(error: Error) {
         print(error)
+    }
+}
+
+// MARK: -TableView
+extension RecipeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        let count = recipe.allIngredients()
+        return 3
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("helllo2")
+//        let measurement = recipe.measurements[indexPath.row]
+//        let ingredient = recipe.ingredients[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeReusableCell", for: indexPath) as! RecipeViewCell
+        cell.measurement.text = "1/2 cup"
+        cell.ingredient.text = "elu"
+        print("helllo3")
+        return cell
     }
 }
