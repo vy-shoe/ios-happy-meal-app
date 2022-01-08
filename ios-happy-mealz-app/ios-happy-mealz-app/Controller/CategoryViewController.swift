@@ -60,7 +60,6 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectCell cell: CategoryViewCell, onIndexPath indexPath: IndexPath) {
-        print("hello")
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

@@ -114,24 +114,6 @@
                                 <rect key="frame" x="0.0" y="118" width="414" height="694"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealReuseIdentifier" id="P2W-d9-57U">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P2W-d9-57U" id="I3E-gT-dCp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name Here It is big name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-hf-IUO">
-                                                    <rect key="frame" x="29" y="5" width="365" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pxe-i7-ODZ"/>
@@ -140,22 +122,25 @@
                     <navigationItem key="navigationItem" id="1wM-o6-hPq"/>
                     <connections>
                         <outlet property="navBar" destination="1wM-o6-hPq" id="JcO-vE-ius"/>
+                        <outlet property="tableView" destination="FuY-1x-tCu" id="oKr-EB-BPo"/>
+                        <segue destination="cF1-lC-ehi" kind="show" identifier="mealSelectedSegue" id="dGu-PO-uMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjT-yT-cSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2450.7246376811595" y="142.63392857142856"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Recipe View Controller-->
         <scene sceneID="BA0-7U-0w8">
             <objects>
-                <viewController id="cF1-lC-ehi" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="cF1-lC-ehi" customClass="RecipeViewController" customModule="ios_happy_mealz_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j5L-Au-llk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="xLf-CL-CjN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5RA-iL-2NA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhG-4w-kyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
