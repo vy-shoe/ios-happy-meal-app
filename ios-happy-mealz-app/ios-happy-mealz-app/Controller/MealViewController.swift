@@ -30,7 +30,6 @@ class MealViewController: UIViewController {
     }
     
     func callRequest()  {
-        print(categoryChosen)
         requestManager.fetchMealsByCategory(category: categoryChosen)
         
     }

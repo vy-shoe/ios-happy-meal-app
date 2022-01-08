@@ -30,13 +30,13 @@ class RequestManager {
     }
     
     func fetchMealsByCategory(category: String) {
-        print(category)
         requestType = "mealsByCategory"
         let url = mealsURL+"\(category)"
         performRequest(urlString: url)
     }
     
     func fetchMeal(mealID: String) {
+        print("Printing meal ID in feth: \(mealID)")
         requestType = "mealID"
         let url = idURL+"\(mealID)"
         performRequest(urlString: url)
@@ -45,7 +45,6 @@ class RequestManager {
     func performRequest(urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-//            let task = session.dataTask(with: url, completionHandler:  handle(data: response: error: ))
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error == nil { //if there is no error
                     if let safeData = data {
@@ -103,15 +102,13 @@ class RequestManager {
             let decodedData = try decoder.decode(Results.self, from: safeData)
             if decodedData.meals != nil {
                 for m in decodedData.meals! {
-                    print(m)
                     let id = m.idMeal
                     let strMeal = m.strMeal
                     
-                    let meal = Meal(idMeal: id, strMeal: strMeal)
+                    let meal = Meal(idMeal: id, strMeal: strMeal, strInstructions: nil)
                     self.mealList.append(meal)
                 }
             }
-            print(self.mealList)
             
             self.mealList = self.mealList.sorted(by: { (c1, c2) -> Bool in
                 let c1_Name = c1.strMeal
@@ -128,6 +125,29 @@ class RequestManager {
     }
     
     func parseMeal(safeData: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(Results.self, from: safeData)
+            print("Print decoded date: \(decodedData)")
+            if decodedData.meals != nil {
+                for r in decodedData.meals! {
+                    print(r)
+                    let mealID = r.idMeal
+                    let mealName = r.strMeal
+                    let instruction = r.strInstructions
+//                    let ingredients = r.strIngredient
+//                    let measurements = r.strMeasure
+                    let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction)
+                    print("Print recipe: \(recipe)")
+                    DispatchQueue.main.async {
+                        self.delegate?.didGetRequest(self, resultData: recipe)
+                    }
+                }
+            }
+        } catch {
+            delegate?.didFailWithError(error: error)
+        }
+
         
     }
 }

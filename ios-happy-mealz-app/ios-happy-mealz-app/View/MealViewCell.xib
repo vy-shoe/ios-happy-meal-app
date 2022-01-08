@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,43 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="371" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="363" translatesAutoresizingMaskIntoConstraints="NO" id="RNr-Nd-gNG">
-                        <rect key="frame" x="5" y="5" width="361" height="0.0"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2G4-KB-8wR">
-                                <rect key="frame" x="0.0" y="5" width="70" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="E1S-O8-g0E"/>
-                                    <constraint firstAttribute="width" constant="70" id="NWg-Uz-ud8"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkr-7k-ikm">
-                                <rect key="frame" x="80" y="5" width="281" height="60"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <color key="baseForegroundColor" name="AccentColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="01U-hn-ZLO"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="2G4-KB-8wR" firstAttribute="top" secondItem="RNr-Nd-gNG" secondAttribute="top" constant="5" id="MgV-vJ-blk"/>
-                            <constraint firstAttribute="bottom" secondItem="2G4-KB-8wR" secondAttribute="bottom" constant="5" id="oUg-yq-zZj"/>
-                            <constraint firstItem="Qkr-7k-ikm" firstAttribute="leading" secondItem="2G4-KB-8wR" secondAttribute="trailing" constant="10" id="wKW-7q-Gsc"/>
-                        </constraints>
-                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkr-7k-ikm">
+                        <rect key="frame" x="10" y="5" width="356" height="71"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                            <color key="baseForegroundColor" name="AccentColor"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="01U-hn-ZLO"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="RNr-Nd-gNG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="1HJ-qp-YLX"/>
-                    <constraint firstAttribute="trailing" secondItem="RNr-Nd-gNG" secondAttribute="trailing" constant="5" id="7el-h6-uuN"/>
-                    <constraint firstAttribute="bottom" secondItem="RNr-Nd-gNG" secondAttribute="bottom" constant="5" id="Ilk-2G-zxD"/>
+                    <constraint firstItem="Qkr-7k-ikm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="KSG-jQ-o80"/>
+                    <constraint firstAttribute="bottom" secondItem="Qkr-7k-ikm" secondAttribute="bottom" constant="5" id="Pdb-bS-Jgw"/>
+                    <constraint firstAttribute="trailing" secondItem="Qkr-7k-ikm" secondAttribute="trailing" constant="5" id="aoS-d4-sb6"/>
+                    <constraint firstItem="Qkr-7k-ikm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cv6-qV-u3P"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imageView" destination="2G4-KB-8wR" id="wMP-RL-Ygf"/>
                 <outlet property="meal" destination="Qkr-7k-ikm" id="bLc-A2-vZU"/>
             </connections>
             <point key="canvasLocation" x="203.62318840579712" y="93.415178571428569"/>

@@ -15,6 +15,7 @@
 		7440125E27891CCA009405C0 /* MealViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7440125C27891CCA009405C0 /* MealViewCell.xib */; };
 		74401261278927E3009405C0 /* RecipeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440125F278927E3009405C0 /* RecipeViewCell.swift */; };
 		74401262278927E3009405C0 /* RecipeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74401260278927E3009405C0 /* RecipeViewCell.xib */; };
+		7440126427893318009405C0 /* Recipe Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440126327893318009405C0 /* Recipe Model.swift */; };
 		74F67F3E2787D99B00720008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3D2787D99B00720008 /* AppDelegate.swift */; };
 		74F67F402787D99B00720008 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F3F2787D99B00720008 /* SceneDelegate.swift */; };
 		74F67F422787D99B00720008 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F67F412787D99B00720008 /* WelcomeViewController.swift */; };
@@ -55,6 +56,7 @@
 		7440125C27891CCA009405C0 /* MealViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealViewCell.xib; sourceTree = "<group>"; };
 		7440125F278927E3009405C0 /* RecipeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewCell.swift; sourceTree = "<group>"; };
 		74401260278927E3009405C0 /* RecipeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeViewCell.xib; sourceTree = "<group>"; };
+		7440126327893318009405C0 /* Recipe Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe Model.swift"; sourceTree = "<group>"; };
 		74F67F3A2787D99B00720008 /* ios-happy-mealz-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-happy-mealz-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F67F3D2787D99B00720008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F67F3F2787D99B00720008 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				7434160F2787E9DC00014F96 /* Results.swift */,
 				7434160D2787E55100014F96 /* RequestManager.swift */,
+				7440126327893318009405C0 /* Recipe Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				74F67F712787DC6700720008 /* CategoryViewController.swift in Sources */,
 				74F67F742787DC7900720008 /* MealViewController.swift in Sources */,
+				7440126427893318009405C0 /* Recipe Model.swift in Sources */,
 				743416102787E9DC00014F96 /* Results.swift in Sources */,
 				74F67F422787D99B00720008 /* WelcomeViewController.swift in Sources */,
 				7434161E2788A65200014F96 /* CategoryViewCell.swift in Sources */,
