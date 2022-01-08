@@ -5,7 +5,6 @@
 //  Created by Vaishu Adi on 1/6/22.
 //
 
-import Foundation
 import UIKit
 
 protocol CategoryCellDelegate {
@@ -61,15 +60,20 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectCell cell: CategoryViewCell, onIndexPath indexPath: IndexPath) {
-        print("hello")
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
     //MARK: - MyCustomCellDelegator Methods
 
      func callSegueFromCell(myData : String) {
-         self.performSegue(withIdentifier: "categorySelectedSegue", sender: myData)
-//         let destinationVC = MealViewController()
-//         destinationVC.categoryChosen = myData
+         categoryChosen = myData
+         self.performSegue(withIdentifier: "categorySelectedSegue", sender: self)
+         
      }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! MealViewController
+        destinationVC.categoryChosen = categoryChosen
+    }
 }

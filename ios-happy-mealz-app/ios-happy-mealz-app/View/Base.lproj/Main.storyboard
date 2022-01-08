@@ -114,53 +114,73 @@
                                 <rect key="frame" x="0.0" y="118" width="414" height="694"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P2W-d9-57U">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="33"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P2W-d9-57U" id="I3E-gT-dCp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name Here It is big name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-hf-IUO">
-                                                    <rect key="frame" x="29" y="5" width="365" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="23" id="R1g-5E-bq1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="KXp-hf-IUO" firstAttribute="leading" secondItem="I3E-gT-dCp" secondAttribute="leadingMargin" constant="9" id="4Ga-hX-LAq"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KXp-hf-IUO" secondAttribute="bottom" constant="-6.5" id="iQ0-G3-MHL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KXp-hf-IUO" secondAttribute="trailing" id="jre-td-DhA"/>
-                                                <constraint firstItem="KXp-hf-IUO" firstAttribute="top" secondItem="I3E-gT-dCp" secondAttribute="topMargin" constant="-6" id="lKs-Ue-mbH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pxe-i7-ODZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="1wM-o6-hPq"/>
+                    <connections>
+                        <outlet property="navBar" destination="1wM-o6-hPq" id="JcO-vE-ius"/>
+                        <outlet property="tableView" destination="FuY-1x-tCu" id="oKr-EB-BPo"/>
+                        <segue destination="cF1-lC-ehi" kind="show" identifier="mealSelectedSegue" id="dGu-PO-uMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjT-yT-cSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2450.7246376811595" y="142.63392857142856"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Recipe View Controller-->
         <scene sceneID="BA0-7U-0w8">
             <objects>
-                <viewController id="cF1-lC-ehi" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="cF1-lC-ehi" customClass="RecipeViewController" customModule="ios_happy_mealz_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j5L-Au-llk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-9H-5vl">
+                                <rect key="frame" x="28" y="93" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="PWm-6r-iLy">
+                                <rect key="frame" x="0.0" y="179" width="410" height="635"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cRq-Kp-x5O">
+                                        <rect key="frame" x="30" y="10" width="350" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-Mf-571">
+                                        <rect key="frame" x="25" y="249" width="360" height="325"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="360" id="1uT-z2-DdU"/>
+                                        </constraints>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Yz7-Mf-571" firstAttribute="top" secondItem="cRq-Kp-x5O" secondAttribute="bottom" constant="15" id="oVP-uC-yJ5"/>
+                                    <constraint firstItem="Yz7-Mf-571" firstAttribute="leading" secondItem="PWm-6r-iLy" secondAttribute="leading" constant="25" id="vuu-Xq-UuD"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="VcJ-b5-1V3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="iMl-cz-Rui"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xLf-CL-CjN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5RA-iL-2NA"/>
+                    <connections>
+                        <outlet property="instructions" destination="Yz7-Mf-571" id="tJh-Fc-VgV"/>
+                        <outlet property="recipeName" destination="nlk-9H-5vl" id="cdm-iQ-rTD"/>
+                        <outlet property="tableView" destination="cRq-Kp-x5O" id="0yk-kW-NXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhG-4w-kyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,18 +8,20 @@
 import Foundation
 
 struct Results: Decodable {
-    let categories: [Category]
+    var categories: [Category]?
+    var meals: [Meal]?
+    var recipe: Meal?
 }
 
 struct Category: Decodable, Encodable {
     let strCategory: String
 }
 
-struct MealData: Decodable, Encodable {
-    let idMeal: String?
-    let strMeal: String?
+struct Meal: Decodable, Encodable {
+    let idMeal: String
+    let strMeal: String
     let strInstructions: String?
-    let strIngredient: [Array<String>]?
-    let strMeasure: [Array<String>]?
-    let strMealThumb: String?
+    //    let strIngredient: [Array<String>]?
+    //    let strMeasure: [Array<String>]?
+    //    let strMealThumb: String?
 }

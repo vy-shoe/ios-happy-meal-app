@@ -20,7 +20,8 @@ class RequestManager {
     let idURL           = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
     var delegate: RequestManagerDelegate?
     var requestType = ""
-    var categoryList = [Category]()
+    var mealList = [Meal]()
+    
     
     func fetchCategories() {
         requestType = "category"
@@ -29,12 +30,13 @@ class RequestManager {
     }
     
     func fetchMealsByCategory(category: String) {
-        requestType = "meals"
+        requestType = "mealsByCategory"
         let url = mealsURL+"\(category)"
         performRequest(urlString: url)
     }
     
     func fetchMeal(mealID: String) {
+        print("Printing meal ID in feth: \(mealID)")
         requestType = "mealID"
         let url = idURL+"\(mealID)"
         performRequest(urlString: url)
@@ -43,30 +45,21 @@ class RequestManager {
     func performRequest(urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-//            let task = session.dataTask(with: url, completionHandler:  handle(data: response: error: ))
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error == nil { //if there is no error
-                    let decoder = JSONDecoder()
                     if let safeData = data {
-                        do {
-                            let decodedData = try decoder.decode(Results.self, from: safeData)
-                            for c in decodedData.categories {
-                                let newCategoryName = c.strCategory
-                                let newCategory = Category(strCategory: newCategoryName)
-                                self.categoryList.append(newCategory)
-                            }
-                            self.categoryList = self.categoryList.sorted(by: { (c1, c2) -> Bool in
-                                let c1_Name = c1.strCategory
-                                let c2_Name = c2.strCategory
-                                return (c1_Name.localizedCaseInsensitiveCompare(c2_Name) == .orderedAscending)
-                             })
-                            DispatchQueue.main.async {
-                                self.delegate?.didGetRequest(self, resultData: self.categoryList)
-                            }
-                            
-                        } catch {
-                            print(error)
+                        switch self.requestType {
+                        case "category":
+                            self.parseCategories(safeData: safeData)
+                        case "mealsByCategory":
+                            self.parseMealsByCategory(safeData: safeData)
+                        case "mealID":
+                            self.parseMeal(safeData:safeData)
+                        default:
+                            print("No parsing of data occurred")
                         }
+                        
+                        
                     }
                     
                 }
@@ -77,16 +70,84 @@ class RequestManager {
         }
     }
         
-//func handle(data: Data?, response: URLResponse?, error: Error?) {
-//        if error != nil {
-//            delegate?.didFailWithError(error: error!)
-//            return //exit out of function, dont continue bc it failed
-//        }
-//        if let safeData = data {
-            //convert data into string
-//            let dataString = String(data: safeData, encoding: .utf8)
-//            self.delegate?.didGetRequest(self, resultData: safeData)
-//        }
-//    }
+    func parseCategories(safeData: Data) {
+        var categoryList = [Category]()
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(Results.self, from: safeData)
+            for c in decodedData.categories! {
+                let newCategoryName = c.strCategory
+                let newCategory = Category(strCategory: newCategoryName)
+                categoryList.append(newCategory)
+            }
+            categoryList = categoryList.sorted(by: { (c1, c2) -> Bool in
+                let c1_Name = c1.strCategory
+                let c2_Name = c2.strCategory
+                return (c1_Name.localizedCaseInsensitiveCompare(c2_Name) == .orderedAscending)
+             })
+            DispatchQueue.main.async {
+                self.delegate?.didGetRequest(self, resultData: categoryList)
+            }
+            
+        } catch {
+            delegate?.didFailWithError(error: error)
+        }
+        
+    }
     
+    func parseMealsByCategory(safeData: Data) {
+        
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(Results.self, from: safeData)
+            if decodedData.meals != nil {
+                for m in decodedData.meals! {
+                    let id = m.idMeal
+                    let strMeal = m.strMeal
+                    
+                    let meal = Meal(idMeal: id, strMeal: strMeal, strInstructions: nil)
+                    self.mealList.append(meal)
+                }
+            }
+            
+            self.mealList = self.mealList.sorted(by: { (c1, c2) -> Bool in
+                let c1_Name = c1.strMeal
+                let c2_Name = c2.strMeal
+                return (c1_Name.localizedCaseInsensitiveCompare(c2_Name) == .orderedAscending)
+             })
+            DispatchQueue.main.async {
+                self.delegate?.didGetRequest(self, resultData: self.mealList)
+            }
+            
+        } catch {
+            delegate?.didFailWithError(error: error)
+        }
+    }
+    
+    func parseMeal(safeData: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(Results.self, from: safeData)
+            print("Print decoded date: \(decodedData)")
+            if decodedData.meals != nil {
+                for r in decodedData.meals! {
+                    print(r)
+                    let mealID = r.idMeal
+                    let mealName = r.strMeal
+                    let instruction = r.strInstructions
+//                    let ingredients = r.strIngredient
+//                    let measurements = r.strMeasure
+                    let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction)
+                    print("Print recipe: \(recipe)")
+                    DispatchQueue.main.async {
+                        self.delegate?.didGetRequest(self, resultData: recipe)
+                    }
+                }
+            }
+        } catch {
+            delegate?.didFailWithError(error: error)
+        }
+
+        
+    }
 }
