@@ -32,7 +32,6 @@ extension RecipeViewController: RequestManagerDelegate {
         if recipe != nil {
             recipeName.text = recipe.strMeal
             instructions.text = recipe.strInstructions
-            print("Fetched ingredients: \(String(describing: recipe.strIngredients))")
             tableView.dataSource = self
             tableView.register(UINib(nibName: "RecipeViewCell", bundle: nil), forCellReuseIdentifier: "RecipeReusableCell")
         }

@@ -35,7 +35,7 @@ extension CategoryViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
         categories = resultData as! [Category]
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "CategoryViewCell", bundle: nil), forCellReuseIdentifier: "CategoryReusableCell")
+        tableView.register(UINib(nibName: K.categoryNib, bundle: nil), forCellReuseIdentifier: K.categoryIdentifier)
     }
     
     func didFailWithError(error: Error) {
@@ -53,7 +53,7 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let categoryName = categories[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryReusableCell", for: indexPath) as! CategoryViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryIdentifier, for: indexPath) as! CategoryViewCell
         cell.label.setTitle("\(categoryName.strCategory)", for: .normal)
         cell.delegate = self
         return cell
@@ -67,7 +67,7 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
 
      func callSegueFromCell(myData : String) {
          categoryChosen = myData
-         self.performSegue(withIdentifier: "categorySelectedSegue", sender: self)
+         self.performSegue(withIdentifier: K.categorySegue, sender: self)
          
      }
     

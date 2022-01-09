@@ -36,7 +36,6 @@ class RequestManager {
     }
     
     func fetchMeal(mealID: String) {
-        print("Printing meal ID in feth: \(mealID)")
         requestType = "mealID"
         let url = idURL+"\(mealID)"
         performRequest(urlString: url)
@@ -128,9 +127,8 @@ class RequestManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Results.self, from: safeData)
-            print("Print decoded date: \(decodedData)")
-            var ingredients = [String]()
-            var measurements = [String]()
+            var ingredients = [String?]()
+            var measurements = [String?]()
             if decodedData.meals != nil {
                 for r in decodedData.meals! {
                     let mealID = r.idMeal
@@ -140,16 +138,14 @@ class RequestManager {
                     for i in 1...20 {
                         let ing = r["strIngredient\(i)"]
                         if (ing != nil && ing as? String != "") {
-                            ingredients.append(ing as! String)
+                            ingredients.append(ing as? String)
                         }
                         let meas = r["strMeasure\(i)"]
-                        if (meas != nil && !(meas as! String).trimmingCharacters(in: .whitespaces).isEmpty) {
-                            measurements.append(meas as! String)
+                        if (meas != nil && meas as? String != "") {
+                            measurements.append(meas as? String)
                         }
                         
                     }
-                    print("Final ingredients:\(ingredients)")
-                    print("Final measurements:\(measurements)")
                     DispatchQueue.main.async {
                         let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction, strIngredients: ingredients, strMeasurements: measurements)
                         self.delegate?.didGetRequest(self, resultData: recipe)
