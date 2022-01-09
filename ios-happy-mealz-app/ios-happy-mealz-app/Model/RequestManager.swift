@@ -6,7 +6,12 @@
 //
 
 import Foundation
-
+/*
+ Request Manager will handle API requests
+ @fetchCategories needs no params due to same URL to present categories
+ @fetchMealsByCategory and @fetchMeal depends on a query from user
+ @parse functions translate JSON data depending on type of request
+ */
 
 protocol RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any)
@@ -15,9 +20,9 @@ protocol RequestManagerDelegate {
 
 
 class RequestManager {
-    let categoryURL     = "https://www.themealdb.com/api/json/v1/1/categories.php"
-    let mealsURL        = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
-    let idURL           = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
+    let categoryURL     = K.categoryURL
+    let mealsURL        = K.mealsURL
+    let idURL           = K.idURL
     var delegate: RequestManagerDelegate?
     var requestType = ""
     var mealList = [Meal]()
@@ -53,7 +58,7 @@ class RequestManager {
                         case "mealsByCategory":
                             self.parseMealsByCategory(safeData: safeData)
                         case "mealID":
-                            self.parseMeal(safeData:safeData)
+                            self.parseRecipe(safeData:safeData)
                         default:
                             print("No parsing of data occurred")
                         }
@@ -123,7 +128,7 @@ class RequestManager {
         }
     }
     
-    func parseMeal(safeData: Data) {
+    func parseRecipe(safeData: Data) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Results.self, from: safeData)

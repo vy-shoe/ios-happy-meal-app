@@ -70,6 +70,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vwK-v7-zxH"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="0wU-rc-cfa" id="A7F-q5-JwN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

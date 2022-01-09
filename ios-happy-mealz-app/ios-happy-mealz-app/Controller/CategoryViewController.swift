@@ -21,7 +21,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         requestManager.delegate = self
         requestManager.fetchCategories()
         
@@ -33,6 +33,7 @@ class CategoryViewController: UIViewController {
 //MARK: - RequestManagerDelegate
 extension CategoryViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
+        //once request has been sent, assign categories list and register table for view
         categories = resultData as! [Category]
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.categoryNib, bundle: nil), forCellReuseIdentifier: K.categoryIdentifier)
@@ -52,6 +53,7 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //assign custom table cell with received data
         let categoryName = categories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryIdentifier, for: indexPath) as! CategoryViewCell
         cell.label.setTitle("\(categoryName.strCategory)", for: .normal)
@@ -64,13 +66,12 @@ extension CategoryViewController: UITableViewDataSource, CategoryCellDelegate {
     }
     
     //MARK: - MyCustomCellDelegator Methods
-
+    // Call segue when category is selected and send category string to next view controller
      func callSegueFromCell(myData : String) {
          categoryChosen = myData
          self.performSegue(withIdentifier: K.categorySegue, sender: self)
          
      }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! MealViewController
