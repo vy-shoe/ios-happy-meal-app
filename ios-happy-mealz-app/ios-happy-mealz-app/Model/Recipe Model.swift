@@ -10,9 +10,9 @@ import Foundation
 struct Recipe {
     let idMeal: String
     let strMeal: String
-    let strInstructions: String?
+    let strInstructions: String
     let strIngredients: [String?]?
-//    let strMeasure: [Array<String>]?
+    let strMeasurements: [String?]?
 //    let strMealThumb: String?
 }
 
