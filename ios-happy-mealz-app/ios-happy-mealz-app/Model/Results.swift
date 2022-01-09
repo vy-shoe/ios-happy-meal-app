@@ -32,6 +32,7 @@ struct Category: Decodable, Encodable {
     let strCategory: String
 }
 
+// Meals JSON structure from API- not formatted well as a database, but it's needed to decode using JSONDecoder
 struct Meals: Decodable, Encodable {
     let idMeal: String
     let strMeal: String

@@ -6,7 +6,12 @@
 //
 
 import Foundation
-
+/*
+ Request Manager will handle API requests
+ @fetchCategories needs no params due to same URL to present categories
+ @fetchMealsByCategory and @fetchMeal depends on a query from user
+ @parse functions translate JSON data depending on type of request
+ */
 
 protocol RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any)
@@ -15,9 +20,9 @@ protocol RequestManagerDelegate {
 
 
 class RequestManager {
-    let categoryURL     = "https://www.themealdb.com/api/json/v1/1/categories.php"
-    let mealsURL        = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
-    let idURL           = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
+    let categoryURL     = K.categoryURL
+    let mealsURL        = K.mealsURL
+    let idURL           = K.idURL
     var delegate: RequestManagerDelegate?
     var requestType = ""
     var mealList = [Meal]()
@@ -36,7 +41,6 @@ class RequestManager {
     }
     
     func fetchMeal(mealID: String) {
-        print("Printing meal ID in feth: \(mealID)")
         requestType = "mealID"
         let url = idURL+"\(mealID)"
         performRequest(urlString: url)
@@ -54,7 +58,7 @@ class RequestManager {
                         case "mealsByCategory":
                             self.parseMealsByCategory(safeData: safeData)
                         case "mealID":
-                            self.parseMeal(safeData:safeData)
+                            self.parseRecipe(safeData:safeData)
                         default:
                             print("No parsing of data occurred")
                         }
@@ -124,13 +128,12 @@ class RequestManager {
         }
     }
     
-    func parseMeal(safeData: Data) {
+    func parseRecipe(safeData: Data) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Results.self, from: safeData)
-            print("Print decoded date: \(decodedData)")
-            var ingredients = [String]()
-            var measurements = [String]()
+            var ingredients = [String?]()
+            var measurements = [String?]()
             if decodedData.meals != nil {
                 for r in decodedData.meals! {
                     let mealID = r.idMeal
@@ -140,16 +143,14 @@ class RequestManager {
                     for i in 1...20 {
                         let ing = r["strIngredient\(i)"]
                         if (ing != nil && ing as? String != "") {
-                            ingredients.append(ing as! String)
+                            ingredients.append(ing as? String)
                         }
                         let meas = r["strMeasure\(i)"]
-                        if (meas != nil && !(meas as! String).trimmingCharacters(in: .whitespaces).isEmpty) {
-                            measurements.append(meas as! String)
+                        if (meas != nil && meas as? String != "") {
+                            measurements.append(meas as? String)
                         }
                         
                     }
-                    print("Final ingredients:\(ingredients)")
-                    print("Final measurements:\(measurements)")
                     DispatchQueue.main.async {
                         let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction, strIngredients: ingredients, strMeasurements: measurements)
                         self.delegate?.didGetRequest(self, resultData: recipe)

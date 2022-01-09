@@ -23,7 +23,6 @@ class MealViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         requestManager.delegate = self
         callRequest()
         
@@ -41,9 +40,10 @@ class MealViewController: UIViewController {
 //MARK: - RequestManagerDelegate
 extension MealViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
+        //once request has been sent, assign meals list and register table for view
         meals = resultData as! [Meal]
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "MealViewCell", bundle: nil), forCellReuseIdentifier: "MealReusableCell")
+        tableView.register(UINib(nibName: K.mealNib, bundle: nil), forCellReuseIdentifier: K.mealIdentifier)
     }
     
     func didFailWithError(error: Error) {
@@ -60,8 +60,9 @@ extension MealViewController: UITableViewDataSource, MealCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //assign custom table cell with received data
         let mealName = meals[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MealReusableCell", for: indexPath) as! MealViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.mealIdentifier, for: indexPath) as! MealViewCell
         cell.meal.setTitle("\(mealName.strMeal)", for: .normal)
         cell.delegate = self
         return cell
@@ -72,10 +73,10 @@ extension MealViewController: UITableViewDataSource, MealCellDelegate {
     }
     
     //MARK: - MyCustomCellDelegator Methods
-
+    // Call segue when meal is selected and send mealID to next view controller
      func callSegueFromCell(myData : String) {
          mealChosen = myData
-         self.performSegue(withIdentifier: "mealSelectedSegue", sender: self)
+         self.performSegue(withIdentifier: K.mealSegue, sender: self)
          
      }
     
@@ -83,7 +84,6 @@ extension MealViewController: UITableViewDataSource, MealCellDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! RecipeViewController
         if let chosenMeal = meals.first(where: { $0.strMeal == mealChosen }) {
-            print("choseNMean: \(chosenMeal)")
             let id = chosenMeal.idMeal
             destinationVC.mealID = id
         } else {
