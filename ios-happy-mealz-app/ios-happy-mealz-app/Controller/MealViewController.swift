@@ -83,6 +83,7 @@ extension MealViewController: UITableViewDataSource, MealCellDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! RecipeViewController
         if let chosenMeal = meals.first(where: { $0.strMeal == mealChosen }) {
+            print("choseNMean: \(chosenMeal)")
             let id = chosenMeal.idMeal
             destinationVC.mealID = id
         } else {

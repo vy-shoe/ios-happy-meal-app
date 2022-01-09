@@ -11,7 +11,9 @@ struct Recipe {
     let idMeal: String
     let strMeal: String
     let strInstructions: String?
-//    let strIngredient: [Array<String>]?
+    let strIngredients: [String?]?
 //    let strMeasure: [Array<String>]?
 //    let strMealThumb: String?
 }
+
+

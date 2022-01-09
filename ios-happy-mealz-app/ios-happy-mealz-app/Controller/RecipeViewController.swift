@@ -33,7 +33,6 @@ class RecipeViewController: UIViewController {
 extension RecipeViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
         if let recipe = resultData as? Recipe {
-            print("Recipe fetched call: \(String(describing: recipe))")
             recipeName.text = recipe.strMeal
             instructions.text = recipe.strInstructions
             tableView.dataSource = self
@@ -58,13 +57,11 @@ extension RecipeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("helllo2")
 //        let measurement = recipe.measurements[indexPath.row]
 //        let ingredient = recipe.ingredients[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeReusableCell", for: indexPath) as! RecipeViewCell
         cell.measurement.text = "1/2 cup"
         cell.ingredient.text = "elu"
-        print("helllo3")
         return cell
     }
 }
