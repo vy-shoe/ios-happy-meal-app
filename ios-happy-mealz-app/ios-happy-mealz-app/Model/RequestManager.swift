@@ -105,7 +105,7 @@ class RequestManager {
                     let id = m.idMeal
                     let strMeal = m.strMeal
                     
-                    let meal = Meal(idMeal: id, strMeal: strMeal, strInstructions: nil)
+                    let meal = Meal(idMeal: id, strMeal: strMeal)
                     self.mealList.append(meal)
                 }
             }
@@ -129,22 +129,35 @@ class RequestManager {
         do {
             let decodedData = try decoder.decode(Results.self, from: safeData)
             print("Print decoded date: \(decodedData)")
+            var ingredients = [String]()
+            var measurements = [String]()
             if decodedData.meals != nil {
                 for r in decodedData.meals! {
-                    print(r)
                     let mealID = r.idMeal
                     let mealName = r.strMeal
-                    let instruction = r.strInstructions
-//                    let ingredients = r.strIngredient
-//                    let measurements = r.strMeasure
-                    let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction)
-                    print("Print recipe: \(recipe)")
+                    let instruction = r.strInstructions ?? "No instruction found for this recipe"
+                    
+                    for i in 1...20 {
+                        let ing = r["strIngredient\(i)"]
+                        if (ing != nil && ing as? String != "") {
+                            ingredients.append(ing as! String)
+                        }
+                        let meas = r["strMeasure\(i)"]
+                        if (meas != nil && !(meas as! String).trimmingCharacters(in: .whitespaces).isEmpty) {
+                            measurements.append(meas as! String)
+                        }
+                        
+                    }
+                    print("Final ingredients:\(ingredients)")
+                    print("Final measurements:\(measurements)")
                     DispatchQueue.main.async {
+                        let recipe = Recipe(idMeal: mealID, strMeal: mealName, strInstructions: instruction, strIngredients: ingredients, strMeasurements: measurements)
                         self.delegate?.didGetRequest(self, resultData: recipe)
+                        }
                     }
                 }
-            }
-        } catch {
+        }
+            catch {
             delegate?.didFailWithError(error: error)
         }
 

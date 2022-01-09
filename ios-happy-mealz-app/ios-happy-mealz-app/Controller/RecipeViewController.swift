@@ -14,33 +14,28 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var instructions: UILabel!
     var requestManager = RequestManager()
     @IBOutlet weak var tableView: UITableView!
-    var recipe: Recipe?
+    var recipe: Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         requestManager.delegate = self
-        callRequest()
-    }
-    
-    func callRequest()  {
-        print(mealID)
         requestManager.fetchMeal(mealID: mealID)
     }
+    
 }
 
 //MARK: - RequestManagerDelegate
 extension RecipeViewController: RequestManagerDelegate {
     func didGetRequest(_ requestManager: RequestManager, resultData: Any) {
-        if let recipe = resultData as? Recipe {
-            print("Recipe fetched call: \(String(describing: recipe))")
+        recipe = resultData as? Recipe
+        if recipe != nil {
             recipeName.text = recipe.strMeal
             instructions.text = recipe.strInstructions
+            print("Fetched ingredients: \(String(describing: recipe.strIngredients))")
             tableView.dataSource = self
             tableView.register(UINib(nibName: "RecipeViewCell", bundle: nil), forCellReuseIdentifier: "RecipeReusableCell")
-            print("hello1")
         }
-        
     }
     
     func didFailWithError(error: Error) {
@@ -52,19 +47,17 @@ extension RecipeViewController: RequestManagerDelegate {
 extension RecipeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let count = recipe.allIngredients()
-        return 3
+        let count = recipe?.strIngredients?.count ?? 0
+        return count 
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("helllo2")
-//        let measurement = recipe.measurements[indexPath.row]
-//        let ingredient = recipe.ingredients[indexPath.row]
+        let meas = recipe?.strMeasurements![indexPath.row]
+        let ing = recipe?.strIngredients![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeReusableCell", for: indexPath) as! RecipeViewCell
-        cell.measurement.text = "1/2 cup"
-        cell.ingredient.text = "elu"
-        print("helllo3")
+        cell.measurement.text = meas
+        cell.ingredient.text = ing
         return cell
     }
 }
